@@ -1,42 +1,85 @@
-import * as React from "react"
-import PropTypes from "prop-types"
+import React from "react"
 import { Link } from "gatsby"
+import styled from 'styled-components';
+import { FaBars } from 'react-icons/fa';
+import { MenuData } from '../data/MenuData';
+import { Button } from './Button';
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+const Header = () => {
+  return (
+    <Nav>
+      <NavLink to="/">EXPLOREIX</NavLink>
+      <Bars />
+      <NavMenu>
+        {MenuData.map((item, index) => (
+          <NavLink key={index} to={item.link}>{item.title}</NavLink>
+        ))}
+      </NavMenu>
+      <NavBtn>
+        <Button
+          primary="true"
+          round="true"
+          to="/trips"
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+          Book a Flight
+        </Button>
+      </NavBtn>
+    </Nav>
+  )
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+const Nav = styled.nav`
+  background: red;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  position: relative;
+  padding: 0.5rem;
+`
+
+const NavLink = styled(Link)`
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 1rem;
+  height: 100%;
+  cursor: pointer;
+`
+
+const Bars = styled(FaBars)`
+  display: none;
+  color: #fff;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.8rem;
+    transform: translate(-100%, 75%);
+  }
+`
+
+const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: -48px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const NavBtn = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;
 
 export default Header
