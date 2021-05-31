@@ -1,0 +1,26 @@
+[
+  {
+    "img": "../assets/images/travel-1.jpg",
+    "alt": "travel destination 1",
+    "name": "Travel Destination 1",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/travel-2.jpg",
+    "alt": "travel destination 2",
+    "name": "Travel destination 2",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/travel-3.jpg",
+    "alt": "travel destination 3",
+    "name": "Travel destination 3",
+    "button": "View Destination"
+  },
+  {
+    "img": "../assets/images/travel-4.jpg",
+    "alt": "travel destination 4",
+    "name": "Travel destination 4",
+    "button": "View Destination"
+  }
+]
