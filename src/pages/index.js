@@ -6,6 +6,7 @@ import Trips from "../components/Trips";
 import Testimonials from "../components/Testimonials";
 import Stats from "../components/Stats";
 import Email from "../components/Email";
+import Footer from "../components/Footer";
 
 const IndexPage = () => (
   <Layout>
@@ -15,6 +16,7 @@ const IndexPage = () => (
     <Testimonials />
     <Stats />
     <Email />
+    <Footer />
   </Layout>
 )
 
